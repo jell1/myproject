@@ -14,6 +14,17 @@ define(['jquery',
             this.$el.html(preparedTemplate({
                 test: 'test'
             }));
+
+            $.ajax({
+                type: 'get',
+                url: '/index.php/Assets/asset',
+                dataType: 'JSON'
+            }).done(function(data) {
+                console.log(data)
+            });
+
+
+
         },
         loadDetails: function() {
             PM.Modal.show('views/detailsView', {
@@ -24,7 +35,7 @@ define(['jquery',
         },
         scroll: function(e, target) {
             console.log(target)
-            //finds classes position and navigates there
+                //finds classes position and navigates there
             if (target) {
                 var divPosition = $(target).offset();
             } else {
@@ -42,11 +53,11 @@ define(['jquery',
 
             if (myClass == 'projects-tab') {
                 var target = '.projects';
-            } else if (myClass == 'journey-tab'){
+            } else if (myClass == 'journey-tab') {
                 var target = '.journey';
-            } else if (myClass == 'contact-tab'){
+            } else if (myClass == 'contact-tab') {
                 var target = '.contact';
-            } else if(myClass == 'home-tab'){
+            } else if (myClass == 'home-tab') {
                 var target = '.home';
             }
             //removes selected class from currently selected tab adds selected class to new selected tab
@@ -58,7 +69,7 @@ define(['jquery',
         },
         events: {
             'click .fa-chevron-down': 'scroll',
-            'click li': 'selectTab',
+            'click .nav li': 'selectTab',
 
         }
     });

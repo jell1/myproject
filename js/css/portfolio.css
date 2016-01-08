@@ -254,8 +254,25 @@
 	margin: 100px auto;
 }
 
+/***************************************
+			Journey
+****************************************/
+.journey {
+	background: #706C6C;
+	color: white;
+	margin-top: -100px;
+}
 
+.journey ul {
+	font-size: 30px;
+	font-family: lato;
+	padding: 100px;
+	list-style-type: circle;
+}
 
+.journey li {
+	margin-bottom: 50px;
+}
 
 
 
