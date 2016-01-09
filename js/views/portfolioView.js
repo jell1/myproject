@@ -15,13 +15,13 @@ define(['jquery',
                 test: 'test'
             }));
 
-            $.ajax({
-                type: 'get',
-                url: '/index.php/Assets/asset',
-                dataType: 'JSON'
-            }).done(function(data) {
-                console.log(data)
-            });
+            // $.ajax({
+            //     type: 'get',
+            //     url: '/index.php/Assets/asset',
+            //     dataType: 'JSON'
+            // }).done(function(data) {
+            //     console.log(data)
+            // });
 
 
 
