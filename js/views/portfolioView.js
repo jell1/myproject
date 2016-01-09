@@ -34,7 +34,6 @@ define(['jquery',
             })
         },
         scroll: function(e, target) {
-            console.log(target)
                 //finds classes position and navigates there
             if (target) {
                 var divPosition = $(target).offset();
@@ -48,24 +47,24 @@ define(['jquery',
         },
         selectTab: function(e) {
             //gets currenttargets clas
-            console.log(e)
             var target = '.' + $(e.currentTarget).attr("data-class");
-            console.log(target)
             //removes selected class from currently selected tab adds selected class to new selected tab
             $('.selected').removeClass('selected');
             $(e.currentTarget).addClass('selected');
-
-            console.log(target);
+            //scrolls to target
             this.scroll(e, target);
+            //resets home as selected
+            this.$el.find('.selected').removeClass('selected');
+            this.$el.find('.home-tab').addClass('selected');
         },
-        codepen: function(){
+        codepen: function() {
             window.open('http://codepen.io/jell1/');
         },
-        linkedin: function(){
+        linkedin: function() {
             window.open('http://www.linkedin.com/in/justinleon');
         },
-        github: function(){
-          window.open('https://github.com/jell1');  
+        github: function() {
+            window.open('https://github.com/jell1');
         },
         events: {
             'click .fa-chevron-down': 'scroll',

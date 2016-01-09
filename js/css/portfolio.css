@@ -45,8 +45,8 @@
 	background-image: url('/images/JLblueBack.png');
 	margin: 7px 0 0 16px;
 	background-size: cover;
-	height: 40px;
-	width: 40px;
+	height: 54px;
+	width: 54px;
 	position: relative;
 	top: 11px;
 	display: inline-block;
@@ -124,7 +124,7 @@
 }
 
 .home-footer span:hover {
-    color: white;
+    color: #DEE4E9;
 }
 
 
