@@ -68,9 +68,9 @@ define(['jquery',
         },
         events: {
             'click .fa-chevron-down': 'scroll',
-            'click .nav li': 'selectTab',
+            'click .nav li, .home-sticky': 'selectTab',
             'click .codepen': 'codepen',
-            'click .linkedin': 'linkedin',
+            'click .linkedin, .logo': 'linkedin',
             'click .github': 'github'
 
         }
