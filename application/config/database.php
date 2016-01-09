@@ -64,10 +64,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	//'hostname' => 'localhost',
 	'hostname' => '166.62.89.126',
-	'username' => 'danyella',
+	'username' => 'justin',
 	'password' => 'Justin13',
-	'database' => 'danyella_justin',
+	'database' => 'justin_justin',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

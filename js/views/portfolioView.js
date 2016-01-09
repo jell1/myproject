@@ -14,6 +14,17 @@ define(['jquery',
             this.$el.html(preparedTemplate({
                 test: 'test'
             }));
+
+            $.ajax({
+                type: 'get',
+                url: '/index.php/Assets/asset',
+                dataType: 'JSON'
+            }).done(function(data) {
+                console.log(data)
+            });
+
+
+
         },
         loadDetails: function() {
             PM.Modal.show('views/detailsView', {
@@ -23,8 +34,7 @@ define(['jquery',
             })
         },
         scroll: function(e, target) {
-            console.log(target)
-            //finds classes position and navigates there
+                //finds classes position and navigates there
             if (target) {
                 var divPosition = $(target).offset();
             } else {
@@ -37,28 +47,31 @@ define(['jquery',
         },
         selectTab: function(e) {
             //gets currenttargets clas
-            var myClass = $(e.currentTarget).attr("class");
-            console.log(myClass)
-
-            if (myClass == 'projects-tab') {
-                var target = '.projects';
-            } else if (myClass == 'journey-tab'){
-                var target = '.journey';
-            } else if (myClass == 'contact-tab'){
-                var target = '.contact';
-            } else if(myClass == 'home-tab'){
-                var target = '.home';
-            }
+            var target = '.' + $(e.currentTarget).attr("data-class");
             //removes selected class from currently selected tab adds selected class to new selected tab
             $('.selected').removeClass('selected');
             $(e.currentTarget).addClass('selected');
-
-            console.log(target);
+            //scrolls to target
             this.scroll(e, target);
+            //resets home as selected
+            this.$el.find('.selected').removeClass('selected');
+            this.$el.find('.home-tab').addClass('selected');
+        },
+        codepen: function() {
+            window.open('http://codepen.io/jell1/');
+        },
+        linkedin: function() {
+            window.open('http://www.linkedin.com/in/justinleon');
+        },
+        github: function() {
+            window.open('https://github.com/jell1');
         },
         events: {
             'click .fa-chevron-down': 'scroll',
-            'click li': 'selectTab',
+            'click .nav li, .home-sticky': 'selectTab',
+            'click .codepen': 'codepen',
+            'click .linkedin, .logo': 'linkedin',
+            'click .github': 'github'
 
         }
     });
