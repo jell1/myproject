@@ -61,10 +61,18 @@ define(['jquery',
         codepen: function(){
             window.open('http://codepen.io/jell1/');
         },
+        linkedin: function(){
+            window.open('http://www.linkedin.com/in/justinleon');
+        },
+        github: function(){
+          window.open('https://github.com/jell1');  
+        },
         events: {
             'click .fa-chevron-down': 'scroll',
             'click .nav li': 'selectTab',
-            'click .codepen': 'codepen'
+            'click .codepen': 'codepen',
+            'click .linkedin': 'linkedin',
+            'click .github': 'github'
 
         }
     });
