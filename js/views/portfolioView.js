@@ -48,18 +48,9 @@ define(['jquery',
         },
         selectTab: function(e) {
             //gets currenttargets clas
-            var myClass = $(e.currentTarget).attr("class");
-            console.log(myClass)
-
-            if (myClass == 'projects-tab') {
-                var target = '.projects';
-            } else if (myClass == 'journey-tab') {
-                var target = '.journey';
-            } else if (myClass == 'contact-tab') {
-                var target = '.contact';
-            } else if (myClass == 'home-tab') {
-                var target = '.home';
-            }
+            console.log(e)
+            var target = '.' + $(e.currentTarget).attr("data-class");
+            console.log(target)
             //removes selected class from currently selected tab adds selected class to new selected tab
             $('.selected').removeClass('selected');
             $(e.currentTarget).addClass('selected');
@@ -67,9 +58,13 @@ define(['jquery',
             console.log(target);
             this.scroll(e, target);
         },
+        codepen: function(){
+            window.open('http://codepen.io/jell1/');
+        },
         events: {
             'click .fa-chevron-down': 'scroll',
             'click .nav li': 'selectTab',
+            'click .codepen': 'codepen'
 
         }
     });
