@@ -1,40 +1,52 @@
         /********************************************
-					Home
+                    Home
 ********************************************/
-        
         .home {
             background: linear-gradient( rgba(22, 22, 23, 0.45), rgba(10, 45, 110, 0.45)), url('/images/macbook2small.jpg');
             background-size: cover;
-            background-position: center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            /*background-position: center;*/
             overflow-x: hidden;
             /*background: #4D4D51;*/
             height: 100vh;
+            min-height: 600px;
             max-height: 1024px;
-            min-height: 740px;
+            /*min-height: 740px;*/
             position: relative;
         }
 
+        .db {
+            display: block;
+        }
+
+        .dn {
+            display: none;
+        }
+        
         .home-sticky {
-        	position: fixed;
-        	bottom: 0;
-        	left: 0;
-        	padding-left: 10px;
-        	color: #89BAE6;
-        	font-size: 40px;
-        	cursor: pointer;
+            position: fixed;
+            -webkit-backface-visibility: hidden;
+            bottom: 0;
+            left: 0;
+            padding-left: 10px;
+            color: #89BAE6;
+            font-size: 40px;
+            cursor: pointer;
         }
-
+        
         .home-sticky:hover {
-        	color: #1185EF;
+            color: #1185EF;
         }
-
+        
         .fa-home {
-        	cursor: pointer;
+            cursor: pointer;
         }
         
         .nav {
             position: absolute;
-            width: 100%
+            width: 100%;
         }
         
         .nav ul {
@@ -42,6 +54,37 @@
             position: relative;
             top: 23px;
             right: 94px
+        }
+        
+        .nav-mobile {
+            height: 200px;
+            display: none;
+        }
+        
+        .nav-mobile ul {
+            list-style-type: none;
+            margin-top: 5px;
+            background: rgba(42, 37, 37, 0.26);
+            text-align: center;
+            display: none;
+        }
+        
+        .nav-mobile li {
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .mobile-icon {
+            float: right;
+            margin: 4px 29px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .mobile-close-nav {
+            display: none;
         }
         
         .nav li {
@@ -75,7 +118,7 @@
         .home-content {
             font-size: 2.4em;
             width: 71%;
-            margin: 120px auto;
+            margin: 160px auto;
             /* background: rgba(36,36,54,.2); */
             color: white;
             border-radius: 2px;
@@ -87,7 +130,7 @@
         .me1 {
             background: linear-gradient( rgba(72, 130, 237, 0.09), rgba(10, 45, 110, 0.45)), url('/images/me1.jpg');
             /*background-image: url('/images/me1.jpg');*/
-            opacity: .6;
+            /*opacity: .6;*/
             height: 139px;
             width: 144px;
             background-size: cover;
@@ -126,8 +169,9 @@
         }
         
         .home-footer {
-            position: absolute;
+            /*            position: absolute;
             bottom: 0;
+            -webkit-backface-visibility: hidden;*/
             color: #2F3954;
             font-size: 65px;
             text-align: center;
@@ -139,14 +183,14 @@
         }
         
         .home-footer span {
-        	cursor: pointer;
+            cursor: pointer;
         }
         
         .home-footer span:hover {
             color: #DEE4E9;
         }
         /********************************************
-					Projects
+                    Projects
 ********************************************/
         
         .header {
@@ -264,7 +308,7 @@
             margin: 100px auto;
         }
         /***************************************
-			Journey
+            Journey
 ****************************************/
         
         .journey {
@@ -291,7 +335,7 @@
             margin-bottom: 50px;
         }
         /**************************************
-		Contact
+        Contact
 **************************************/
         
         .contact-img {
@@ -349,7 +393,7 @@
             font-size: 16px;
         }
         /**************************************
-			Media Queries
+            Media Queries
 ***************************************/
         
         @media screen and (max-width: 950px) {
@@ -362,21 +406,31 @@
         }
         
         @media screen and (max-width: 750px) {
-            .logo {
-                background-size: cover;
-                height: 93px;
-                width: 92px;
-                display: block;
-                margin: 29px auto;
+            .nav {
+                display: none;
             }
-            .nav ul {
-                float: none;
-                position: static;
-                text-align: center;
-                margin-top: 20px;
+            .nav-mobile {
+                display: block;
+            }
+            .me1 {
+                height: 115px;
+                width: 115px;
+            }
+            .me-msg {
+                font-size:
+            }
+            .nav li {
+                font-size: 17px;
             }
             .home-content {
-                margin: 220px auto;
+                font-size: 25px;
+                margin: 100px auto;
+            }
+            .logo {
+                margin: 7px 0 0 37px;
+            }
+            .home-footer {
+                display: none;
             }
         }
         
@@ -393,44 +447,36 @@
                 margin: 0 auto;
                 margin-top: 50px;
             }
-            .me-msg {
-                font-size: 30px;
-            }
-
             .journey li {
-            	font-size: 20px;
+                font-size: 20px;
             }
+            .nav li {}
         }
         
         @media screen and (max-width: 420px) {
             .project1-img-container {
-                height: 195px;
+                height: 224px;
             }
             .project1-content {
                 margin-top: 50px;
             }
-            .logo {
+            /*            .logo {
                 background-size: cover;
                 height: 93px;
                 width: 92px;
                 display: block;
                 margin: 29px auto;
-            }
+            }*/
             .home-content {
-                margin: 282px auto;
+                margin: 80pxpx auto;
             }
-            .me-msg {
-                font-size: 22px;
-            }
-
             .journey ul {
-            	padding: 30px; 
+                padding: 30px;
             }
-
             .journey li {
-            	font-size: 15px;
+                font-size: 15px;
             }
-            /*		.project1-info {
-			margin-top: 150px;
-		}*/
+            /*      .project1-info {
+            margin-top: 150px;
+        }*/
         }

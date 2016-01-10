@@ -66,12 +66,19 @@ define(['jquery',
         github: function() {
             window.open('https://github.com/jell1');
         },
+        toggleNav: function(e) {
+            var target = $(e.currentTarget).find('div');
+            target.toggle();
+            this.$el.find('.nav-mobile ul').toggle();
+            // console.log(target);
+        },
         events: {
             'click .fa-chevron-down': 'scroll',
-            'click .nav li, .home-sticky': 'selectTab',
+            'click .nav li, .home-sticky, .nav-mobile li': 'selectTab',
             'click .codepen': 'codepen',
             'click .linkedin, .logo': 'linkedin',
-            'click .github': 'github'
+            'click .github': 'github',
+            'click .mobile-icon': 'toggleNav'
 
         }
     });
